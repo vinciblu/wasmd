@@ -1,10 +1,10 @@
 accounts:
-  - name: alice
+  - name: e
     coins: ["1000000000000000000000silk"]
-  - name: bob
+  - name: r
     coins: ["1000000000000000000000silk"]
 validator:
-  name: alice
+  name: e
   staked: "10000000000000000000silk"
 
 host:
@@ -21,10 +21,13 @@ init:
     consensus.timeout_commit: "5s"
     consensus.create_empty_blocks_interval: "5s"
   app:
-    minimum-gas-prices: "5000000000silk"
+    minimum-gas-prices: "500silk"
     api.enable: true
 
 genesis:
+  consensus_params:
+    block:
+      max_gas: "200000000"
   app_state:
     staking:
       params:
